@@ -13,19 +13,18 @@ const expectedResult = [
 	{ lang: 'fr', id: 3, text: 'Salut!' },
 ];
 
+const sortMap = {
+	'en': 1,
+	'uk': 2,
+	'fr': 3,
+}
 
 function convertToWorkObj(data) {
-	const sortMap = {
-		'en': 1,
-		'uk': 2,
-		'fr': 3,
-	}
-
 	const newArr = [];
 	for (let lang in data) {
 		if (!data[lang] || !sortMap[lang]) {
 			continue;
-		}
+		};
 		const newObj = {
 			lang: lang,
 			id: data[lang].id,
@@ -41,12 +40,11 @@ const dataTwo = [
 	{ lang: 'en', id: 2, text: 'Hello!' },
 	{ lang: 'uk', id: 1, text: 'Привіт!' },
 	{ lang: 'fr', id: 3, text: 'Salut!' },
-	{ lang: 'ck', id: null },
-	{ lang: 'null', id: 0 },
-	{ lang: 'textNull', text: "" },
-	{ lang: 'test', text: "123", id: undefined },
+	{ lang: 'nullId', id: null },
+	{ lang: 'idZero', id: 0 },
+	{ lang: 'textEmptyStr', text: "" },
+	{ lang: 'undefinedId', text: "123", id: undefined },
 ];
-
 
 function convertToOldObj(array) {
 	const oldFormatObj = {}
