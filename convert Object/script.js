@@ -24,11 +24,9 @@ function convertToWorkObj(data) {
 
 	const newArr = [];
 	for (let lang in data) {
-
 		if (!data[lang] || !sortMap[lang]) {
 			continue;
 		}
-
 		const newObj = {
 			lang: lang,
 			id: data[lang].id,
@@ -36,11 +34,9 @@ function convertToWorkObj(data) {
 		}
 		newArr.push(newObj);
 	}
-
-	newArr.sort((a, b) => sortMap[a.lang] - sortMap[b.lang]);
-	return newArr
+	return newArr.sort((a, b) => sortMap[a.lang] - sortMap[b.lang]);
 }
-convertToWorkObj(data);
+let workObj = convertToWorkObj(data);
 
 const dataTwo = [
 	{ lang: 'en', id: 2, text: 'Hello!' },
@@ -52,6 +48,7 @@ const dataTwo = [
 	{ lang: 'test', text: "123", id: undefined },
 ];
 
+
 function convertToOldObj(array) {
 	const oldFormatObj = {}
 	array.forEach(element => {
@@ -59,9 +56,10 @@ function convertToOldObj(array) {
 		let id = element.id || element.id === 0 ? element.id : null
 		oldFormatObj[element.lang] = {
 			id: id,
-			text: text
+			text: text,
 		}
 	});
 	return oldFormatObj
 }
-convertToOldObj(dataTwo)
+
+let objofOldFormat = convertToOldObj(dataTwo)
