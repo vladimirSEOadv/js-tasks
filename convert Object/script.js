@@ -19,7 +19,6 @@ function convertToWorkObj(data) {
 		'en': 1,
 		'uk': 2,
 		'fr': 3,
-		'germany': 4,
 	}
 
 	const newArr = [];
