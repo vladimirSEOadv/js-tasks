@@ -38,7 +38,6 @@ function convertToWorkObj(data) {
 	}
 
 	newArr.sort((a, b) => sortMap[a.lang] - sortMap[b.lang]);
-	console.log("newArr >", newArr)
 	return newArr
 }
 convertToWorkObj(data);
@@ -63,7 +62,6 @@ function convertToOldObj(array) {
 			text: text
 		}
 	});
-	console.log("oldFormatObj >", oldFormatObj)
 	return oldFormatObj
 }
 convertToOldObj(dataTwo)
