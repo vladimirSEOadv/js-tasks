@@ -24,7 +24,7 @@ function convertToWorkObj(data) {
 	for (let lang in data) {
 		if (!data[lang] || !sortMap[lang]) {
 			continue;
-		};
+		}
 		const newObj = {
 			lang: lang,
 			id: data[lang].id,
